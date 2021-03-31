@@ -74,11 +74,32 @@
 
     Again, change the <b>Resources</b> to 'DeploymentConfig'. Make sure the 'Create a Route to Application' is ticked. Hit <b>Create</b>. When the topology page is rendered, click on the new Node icon to watch the build.<br/><br/>
 
+    <img src="images/screen6.png" width="100%"/><br/><br/>
 
+    <h2>Creating a Serverless application</h2>
 
+    Now click on <b>Add+</b> again. Click on 'From Catalog'. In the 'Filter by keyword' search box type <b>go</b>. Click on the 'Builder Image' for 'GO'.<br/><br/>
 
+    Click on <b>Create Application</b>. Leave the 'Builder Image Version' as '1.14.7-ubi8'. For the 'Git Repo URL' click on the 'Try Sample' link beneath the textbox.<br/><br/>
 
-    <div class="console">test test test</div>
-    </div>
+    In <b>General</b> click on the pulldown for <b>Application</b> and select 'Create Application'. When the <b>Application Name</b> textbox appears set it to be <b>golangapp</b><br/<br/>
+
+    In <b>Resources</b> select the 'Knative Service'. Click <b>Create</b>.<br/><br/>
+
+    The topology page will reappear; the golangapp will look different to the other two applications created. This is a Knative Service. Click on the 'golang-ex-git' <b>KSVC</b> point to view the sidebar. Observe the build complete.<br/><br/>
+
+    Once the build has completed the Pod will be active; the screen will look like:<br/><br/>
+
+    <img src="images/screen7.png" width="100%"/><br/><br/>
+
+    If you watch the topology for 30 seconds or so, the Pod will terminate; it will go dark blue for a short period, and then render with a white border, indicating it is running at zero replicas. <br/><br/>
+
+    We are now going to send it traffic to force OpenShift to spin up the application; hover over the 'URL' link at the top right of the Knative Service (shown below):<br/><br/>
+
+    <img src="images/screen8.png" width="100%"/><br/><br/>
+
+    Click on the link - you will be taken to a new tab. Quickly click back on the tab with the Topology in it and watch the application spin up. Go back to the tab that has just opened and you will see the output of the application.<br/><br/>
+    
+  </div>
   </body>
 </html>
